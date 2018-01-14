@@ -6,7 +6,7 @@
       <span>Current price of coins to buy/sell: </span>
     </div>
     <div class="col-md-4">
-      $<input type="text" ng-model="coins.currentCoin" ng-change="coins.calcEquivPrice()" onClick="this.setSelectionRange(0, this.value.length)">
+      $<input type="text" ng-model="coins.currentCoin" ng-change="coins.calcEquivOrder(); coins.calcEquivPrice(); coins.calcPerc();" onClick="this.setSelectionRange(0, this.value.length)">
     </div>
   </div>
 
@@ -15,7 +15,7 @@
       <span>Current price of coins to exchange to: </span>
     </div>
     <div class="col-md-4">
-      $<input type="text" ng-model="coins.exchangeCoin" ng-change="coins.calcEquivPrice()" onClick="this.setSelectionRange(0, this.value.length)">
+      $<input type="text" ng-model="coins.exchangeCoin" ng-change="coins.calcEquivOrder(); coins.calcEquivPrice();" onClick="this.setSelectionRange(0, this.value.length)">
     </div>
   </div>
 
@@ -24,7 +24,7 @@
       <span>Equivalent Price: </span>
     </div>
     <div class="col-md-4" ng-if="coins.equivPrice >= 0">
-      <span>${{coins.equivPrice}} is equal to ${{coins.currentCoin}}</span>
+      <span>$ {{coins.equivPrice}} is equal to ${{coins.currentCoin}}</span>
     </div>
   </div>
 
@@ -37,7 +37,9 @@
       <span>Price to Buy/Sell: </span>
     </div>
     <div class="col-md-4">
-      $<input type="text" ng-model="coins.limitOrder" ng-change="coins.calcEquivOrder()" onClick="this.setSelectionRange(0, this.value.length)">
+      $<input type="text" ng-model="coins.limitOrder" ng-change="coins.calcEquivOrder(); coins.calcPerc();" onClick="this.setSelectionRange(0, this.value.length)">
+      <span class="percent" ng-if="coins.percentage > 0">+{{coins.percentage}}%</span>
+
     </div>
   </div>
 
@@ -46,7 +48,8 @@
       <span>Equivalent Order: </span>
     </div>
     <div class="col-md-4" ng-if="coins.equivOrder > 0">
-      <span>{{coins.equivOrder}}</span>
+      <span>$ {{coins.equivOrder}}</span>
     </div>
+
   </div>
 </div>

@@ -1,16 +1,35 @@
 /* Custom page header */
+body {
+  background-color: #333;
+  color: white;
+}
+
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  border-bottom: 1px solid #777;
+  margin-bottom: 25px;
 }
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #777;
 }
 
 div {
   margin-bottom: 5px;
+}
+
+input {
+  color: #333;
+  margin-left: 5px;
+}
+
+.glyphicon {
+  color: #d80000;
+}
+
+.percent {
+  padding: 2px 4px;
+  background-color: #00d81b;
+  border-radius: 8px;
 }
