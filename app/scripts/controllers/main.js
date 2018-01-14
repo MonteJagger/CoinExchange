@@ -23,8 +23,8 @@ angular.module('coinTradingApp')
       this.equivOrder = this.equivPrice*parseFloat(this.limitOrder)/parseFloat(this.currentCoin);
     };
     this.calcPerc = function() {
-      const orig = parseFloat(this.currentCoin);
-      const newNum = parseFloat(this.limitOrder);
+      var orig = parseFloat(this.currentCoin);
+      var newNum = parseFloat(this.limitOrder);
       this.percentage = ((newNum-orig)/orig)*100;
       this.percentage = this.percentage.toFixed(2);
     };
